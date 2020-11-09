@@ -29,5 +29,6 @@ class Doctor
         doc_patients << appointment.patient
       end
     end
+    doc_patients
   end
 end
