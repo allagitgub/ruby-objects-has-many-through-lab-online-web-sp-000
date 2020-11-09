@@ -21,4 +21,13 @@ class Doctor
   def new_appointment(date, patient)
     appointment = Appointment.new(date, patient, self)
   end
+
+  def patients
+    doc_patients = []
+    Appointment.all.select do |appointment|
+      if appointment.doctor == self
+        doc_patients << appointment.patient
+      end
+    end
+  end
 end
